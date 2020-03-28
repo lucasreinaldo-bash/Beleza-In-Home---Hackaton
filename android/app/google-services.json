@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "855470423763",
+    "firebase_url": "https://app-compreai.firebaseio.com",
+    "project_id": "app-compreai",
+    "storage_bucket": "app-compreai.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:855470423763:android:6f5cc4110826e62e3d1e26",
+        "android_client_info": {
+          "package_name": "com.vostore.compreai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "855470423763-grtt4bfdj3mbuvn1pdhuoghogs2avggi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vostore.compreai",
+            "certificate_hash": "7ac5f4cf4875c42ba5404958d570ba6c9f533583"
+          }
+        },
+        {
+          "client_id": "855470423763-spoijdqna8r87iop2gkgrve0m1b7ihl5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfxW-FEtlNlilyIEs44_-XzSbr3Ibukq4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "855470423763-spoijdqna8r87iop2gkgrve0m1b7ihl5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "855470423763-sdlqdq07op8a18mp0k0jjbftu0hr4f7o.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.vostore.lojavirtual"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:855470423763:android:8cb5c18c217d12713d1e26",
+        "android_client_info": {
+          "package_name": "com.vostore.lojavirtual"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "855470423763-6ddirsiq4vbomusffdiaark88aqod6s7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vostore.lojavirtual",
+            "certificate_hash": "7ac5f4cf4875c42ba5404958d570ba6c9f533583"
+          }
+        },
+        {
+          "client_id": "855470423763-spoijdqna8r87iop2gkgrve0m1b7ihl5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfxW-FEtlNlilyIEs44_-XzSbr3Ibukq4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "855470423763-spoijdqna8r87iop2gkgrve0m1b7ihl5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "855470423763-sdlqdq07op8a18mp0k0jjbftu0hr4f7o.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.vostore.lojavirtual"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
