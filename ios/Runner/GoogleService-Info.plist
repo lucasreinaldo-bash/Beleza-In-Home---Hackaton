@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>855470423763-894fbtrrtkgesummjsdv712ua7vudrjq.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.855470423763-894fbtrrtkgesummjsdv712ua7vudrjq</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>855470423763-grtt4bfdj3mbuvn1pdhuoghogs2avggi.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD9YdbZQ8DphXGX_wefF-TPSzZshNYcY9Q</string>
+	<key>GCM_SENDER_ID</key>
+	<string>855470423763</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.vostore.compreai</string>
+	<key>PROJECT_ID</key>
+	<string>app-compreai</string>
+	<key>STORAGE_BUCKET</key>
+	<string>app-compreai.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:855470423763:ios:66147788df56afd73d1e26</string>
+	<key>DATABASE_URL</key>
+	<string>https://app-compreai.firebaseio.com</string>
+</dict>
+</plist>

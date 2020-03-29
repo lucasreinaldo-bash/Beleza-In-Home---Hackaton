@@ -1,4 +1,6 @@
+import 'package:compreai/routers/produtos.dart';
 import 'package:compreai/tabs/InicioTab.dart';
+import 'package:compreai/widgets/CustomDrawer.dart';
 import 'package:flutter/material.dart';
 
 class TelaInicial extends StatefulWidget {
@@ -11,8 +13,14 @@ class _TelaInicialState extends State<TelaInicial> {
   @override
   Widget build(BuildContext context) {
     return PageView(
-//      physics: NeverScrollableScrollPhysics(),/* trecho para evitar a passagem de elementos através deslise    */
-      children: <Widget>[InicioTab()],
+//      physics: NeverScrollableScrollPhysics(),
+      /* trecho para evitar a passagem de elementos através deslise    */
+      children: <Widget>[
+        Scaffold(
+          drawer: CustomDrawer(_pageController),
+          body: InicioTab(),
+        ),
+      ],
     );
   }
 }

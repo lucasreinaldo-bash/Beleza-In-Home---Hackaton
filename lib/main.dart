@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: TelaInicial(),
-      debugShowCheckedModeBanner: true,
+      debugShowCheckedModeBanner: false,
       title: "Compreaí Delivery",
       theme: ThemeData(
           primarySwatch: Colors.blue,
