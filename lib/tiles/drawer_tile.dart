@@ -4,10 +4,11 @@ class DrawerTile extends StatelessWidget {
   final IconData icon;
   final String text;
   final PageController controller;
-  final int page;
+  int page;
 
   DrawerTile(this.icon, this.text, this.controller, this.page);
 
+  double i = 1.0;
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -24,7 +25,7 @@ class DrawerTile extends StatelessWidget {
               Icon(icon, size: 32, color: Colors.black),
               SizedBox(width: 32),
               Text(
-                text,
+                text + "" + page.toString(),
                 style: TextStyle(fontSize: 16, color: Colors.black),
               )
             ],
