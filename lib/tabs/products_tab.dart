@@ -16,10 +16,21 @@ class ProductTab extends StatelessWidget {
             child: CircularProgressIndicator(),
           );
         else {
-          return ListView(
-              children: snapshot.data.documents.map((doc) {
-            return CategoryTile(doc);
-          }).toList());
+          return Stack(
+            children: <Widget>[
+              Container(
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(colors: [
+                  Color.fromARGB(255, 255, 255, 190),
+                  Color.fromARGB(255, 255, 255, 255)
+                ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
+              ),
+              ListView(
+                  children: snapshot.data.documents.map((doc) {
+                return CategoryTile(doc);
+              }).toList())
+            ],
+          );
         }
       },
     );

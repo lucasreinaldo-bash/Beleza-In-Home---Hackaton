@@ -1,4 +1,5 @@
 import 'package:compreai/PrincipalBottom.dart';
+import 'package:compreai/routers/Login.dart';
 import 'package:flutter/material.dart';
 import 'TelaInicial.dart';
 
@@ -9,7 +10,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Principal(),
+      home: Login(),
+//      home: Principal(),
       debugShowCheckedModeBanner: false,
       title: "Compreaí Delivery",
       theme: ThemeData(
