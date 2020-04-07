@@ -1,3 +1,4 @@
+import 'package:compreai/routers/perfilUsuario.dart';
 import 'package:compreai/routers/produtos.dart';
 import 'package:compreai/widgets/AnimatedBottomBar.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +20,11 @@ class Principal extends StatefulWidget {
     BarItem(
       text: "Meus Pedidos",
       iconData: Icons.shopping_basket,
+      color: Colors.lightBlue.shade900,
+    ),
+    BarItem(
+      text: "Meu Perfil",
+      iconData: Icons.perm_identity,
       color: Colors.lightBlue.shade900,
     ),
 
@@ -56,6 +62,7 @@ class _PrincipalState extends State<Principal> {
       Produtos(),
       Produtos(),
       TelaInicial(),
+      PerfilUsuario(),
     ];
 
     return Scaffold(

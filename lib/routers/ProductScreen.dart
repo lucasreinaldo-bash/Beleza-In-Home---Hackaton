@@ -118,6 +118,16 @@ class _ProductScreenState extends State<ProductScreen> {
                                   TextStyle(fontSize: 18, color: Colors.white)),
                           color: primaryColor,
                         ),
+                      ),
+                      SizedBox(height: 16),
+                      Text(
+                        "Descrição",
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.w500),
+                      ),
+                      Text(
+                        product.description,
+                        style: TextStyle(fontSize: 16),
                       )
                     ],
                   ),

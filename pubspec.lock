@@ -49,21 +49,7 @@ packages:
       name: cloud_firestore
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.13.4+2"
-  cloud_firestore_platform_interface:
-    dependency: transitive
-    description:
-      name: cloud_firestore_platform_interface
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.1.0"
-  cloud_firestore_web:
-    dependency: transitive
-    description:
-      name: cloud_firestore_web
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.1.1+2"
+    version: "0.12.11"
   collection:
     dependency: transitive
     description:
@@ -99,6 +85,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "7.2.1"
+  firebase_auth:
+    dependency: "direct main"
+    description:
+      name: firebase_auth
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.10.0"
   firebase_core:
     dependency: "direct main"
     description:
@@ -125,13 +118,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_auth:
-    dependency: "direct main"
-    description:
-      name: flutter_auth
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.0.1"
   flutter_staggered_grid_view:
     dependency: "direct main"
     description:
