@@ -18,6 +18,11 @@ class Principal extends StatefulWidget {
       color: Colors.blueAccent.shade700,
     ),
     BarItem(
+      text: "Meu Carrinho",
+      iconData: Icons.shopping_cart,
+      color: Colors.blueAccent.shade700,
+    ),
+    BarItem(
       text: "Meus Pedidos",
       iconData: Icons.shopping_basket,
       color: Colors.lightBlue.shade900,
@@ -51,7 +56,7 @@ class _PrincipalState extends State<Principal> {
         //systemNavigationBarColor: Colors.lightBlue[700], // navigation bar color
         //statusBarColor: Colors.lightBlue[700],
         systemNavigationBarIconBrightness: Brightness.dark,
-        systemNavigationBarColor: Colors.blueAccent,
+        systemNavigationBarColor: Colors.deepPurpleAccent,
         statusBarIconBrightness: Brightness.dark // status bar color
         ));
 
@@ -63,6 +68,7 @@ class _PrincipalState extends State<Principal> {
       Produtos(),
       TelaInicial(),
       PerfilUsuario(),
+      PerfilUsuario(),
     ];
 
     return Scaffold(
@@ -70,7 +76,7 @@ class _PrincipalState extends State<Principal> {
       bottomNavigationBar: AnimatedBottomBar(
         barItems: widget.barItems,
         animationDuration: const Duration(milliseconds: 500),
-        barStyle: BarStyle(fontSize: width * 0.045, iconSize: width * 0.10),
+        barStyle: BarStyle(fontSize: width * 0.024, iconSize: width * 0.05),
         onBarTap: (index) {
           setState(() {
             selectedBarIndex = index;

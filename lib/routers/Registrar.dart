@@ -59,7 +59,7 @@ class _RegistrarState extends State<Registrar> {
                           keyboardType: TextInputType.emailAddress,
                           validator: (text) {
                             if (text.isEmpty)
-                              return "Campo não pmode ficar vazio.";
+                              return "Campo não pode ficar vazio.";
                           },
                         ),
                         SizedBox(
@@ -72,6 +72,8 @@ class _RegistrarState extends State<Registrar> {
                           validator: (text) {
                             if (text.isEmpty || (!text.contains("@")))
                               return "E-mail inválido";
+                            if (text.contains(" "))
+                              return "Remova os espaços em branco";
                           },
                         ),
                         SizedBox(
@@ -84,6 +86,8 @@ class _RegistrarState extends State<Registrar> {
                           validator: (text) {
                             if (text.isEmpty || text.length < 6)
                               return "Senha inválida!";
+                            if (text.contains(" "))
+                              return "Sua senha possui espaços em branco";
                           },
                         ),
                         SizedBox(

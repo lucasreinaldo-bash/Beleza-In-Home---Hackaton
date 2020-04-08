@@ -14,13 +14,34 @@ class Products_Screen extends StatelessWidget {
       length: 2,
       child: Scaffold(
           appBar: AppBar(
-            title: Text(snapshot.data["title"]),
+            backgroundColor: Colors.white,
+            title: Text(
+              snapshot.data["title"],
+              style:
+                  TextStyle(color: Colors.purple, fontWeight: FontWeight.bold),
+            ),
             centerTitle: true,
             bottom: TabBar(
               indicatorColor: Colors.purple,
               tabs: <Widget>[
-                Tab(icon: Icon(Icons.grid_on)),
-                Tab(icon: Icon(Icons.list)),
+                Tab(
+                    child: Text(
+                      "Vizualizar em grade",
+                      style: TextStyle(color: Colors.purple),
+                    ),
+                    icon: Icon(
+                      Icons.grid_on,
+                      color: Colors.purple,
+                    )),
+                Tab(
+                    child: Text(
+                      "Compra Rápida",
+                      style: TextStyle(color: Colors.purple),
+                    ),
+                    icon: Icon(
+                      Icons.list,
+                      color: Colors.purple,
+                    )),
               ],
             ),
           ),
@@ -48,19 +69,19 @@ class Products_Screen extends StatelessWidget {
                             childAspectRatio: 0.65),
                         itemCount: snapshot.data.documents.length,
                         itemBuilder: (context, index) {
-                          return ProductTile(
-                              "grid",
-                              ProductData.fromDocument(
-                                  snapshot.data.documents[index]));
+                          ProductData data = ProductData.fromDocument(
+                              snapshot.data.documents[index]);
+                          data.category = this.snapshot.documentID;
+                          return ProductTile("grid", data);
                         }),
                     ListView.builder(
                         padding: EdgeInsets.all(4),
                         itemCount: snapshot.data.documents.length,
                         itemBuilder: (context, index) {
-                          return ProductTile(
-                              "list",
-                              ProductData.fromDocument(
-                                  snapshot.data.documents[index]));
+                          ProductData data = ProductData.fromDocument(
+                              snapshot.data.documents[index]);
+                          data.category = this.snapshot.documentID;
+                          return ProductTile("list", data);
                         })
                   ],
                 );

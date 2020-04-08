@@ -21,8 +21,8 @@ class ProductTab extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(
                     gradient: LinearGradient(colors: [
-                  Color.fromARGB(255, 255, 255, 190),
-                  Color.fromARGB(255, 255, 255, 255)
+                  Colors.white,
+                  Colors.white10,
                 ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
               ),
               ListView(

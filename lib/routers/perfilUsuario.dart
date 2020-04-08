@@ -20,7 +20,12 @@ class _PerfilUsuarioState extends State<PerfilUsuario> {
           );
         return Scaffold(
             appBar: AppBar(
-              title: Text("Minhas Informações"),
+              backgroundColor: Colors.white,
+              title: Text(
+                "Minhas Informações",
+                style: TextStyle(
+                    color: Colors.purple, fontWeight: FontWeight.bold),
+              ),
               centerTitle: true,
             ),
             body: Column(

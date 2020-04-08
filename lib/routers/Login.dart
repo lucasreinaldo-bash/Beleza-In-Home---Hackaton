@@ -17,11 +17,6 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     void _onSucess() {
-      _scaffoldKey.currentState.showSnackBar(SnackBar(
-        content: Text("Conta criada com sucesso!"),
-        backgroundColor: Colors.blueGrey,
-        duration: Duration(seconds: 2),
-      ));
       Future.delayed(Duration(seconds: 2)).then((_) {
         Navigator.of(context)
             .push(MaterialPageRoute(builder: (context) => Principal()));
@@ -120,7 +115,7 @@ class Login extends StatelessWidget {
 
   void _onFail() {
     _scaffoldKey.currentState.showSnackBar(SnackBar(
-      content: Text("Problema ao criar sua conta."),
+      content: Text("Houve um erro no seu login."),
       backgroundColor: Colors.blueGrey,
       duration: Duration(seconds: 2),
     ));

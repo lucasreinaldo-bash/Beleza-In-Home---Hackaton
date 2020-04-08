@@ -17,4 +17,12 @@ class ProductData {
     variacao = snapshot.data["variacao"];
     images = snapshot.data["images"];
   }
+
+  Map<String, dynamic> toResumedMap() {
+    return {
+      "title": title,
+      "description": description,
+      "preco": price,
+    };
+  }
 }

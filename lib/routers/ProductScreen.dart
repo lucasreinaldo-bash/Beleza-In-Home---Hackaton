@@ -1,5 +1,8 @@
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:compreai/datas/cart_product.dart';
 import 'package:compreai/datas/product_data.dart';
+import 'package:compreai/models/cart_model.dart';
+import 'package:compreai/models/user_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -14,15 +17,22 @@ class _ProductScreenState extends State<ProductScreen> {
   final ProductData product;
   String preferencia;
   _ProductScreenState(this.product);
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     final Color primaryColor = Theme.of(context).primaryColor;
     return Stack(
       children: <Widget>[
         Scaffold(
+            key: _scaffoldKey,
             backgroundColor: Colors.white,
             appBar: AppBar(
-              title: Text(product.title),
+              backgroundColor: Colors.white,
+              title: Text(
+                product.title,
+                style: TextStyle(
+                    color: Colors.purple, fontWeight: FontWeight.bold),
+              ),
               centerTitle: true,
             ),
             body: ListView(
@@ -112,7 +122,26 @@ class _ProductScreenState extends State<ProductScreen> {
                       SizedBox(
                         height: 44,
                         child: RaisedButton(
-                          onPressed: preferencia != null ? () {} : null,
+                          onPressed: preferencia != null
+                              ? () {
+                                  if (UserModel.of(context).isLoggedIn()) {
+                                    CartProduct cartProduct = CartProduct();
+                                    cartProduct.variacao = preferencia;
+                                    cartProduct.quantidade = 1;
+                                    cartProduct.pid = product.id;
+                                    cartProduct.categoria = product.category;
+                                    CartModel.of(context)
+                                        .addCartItem(cartProduct);
+                                  } else {
+                                    _scaffoldKey.currentState
+                                        .showSnackBar(SnackBar(
+                                      content: Text("Você não está conectado!"),
+                                      backgroundColor: Colors.blueGrey,
+                                      duration: Duration(seconds: 2),
+                                    ));
+                                  }
+                                }
+                              : null,
                           child: Text("Adicionar ao Carrinho",
                               style:
                                   TextStyle(fontSize: 18, color: Colors.white)),
