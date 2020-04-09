@@ -3,8 +3,11 @@ import 'package:compreai/datas/cart_product.dart';
 import 'package:compreai/datas/product_data.dart';
 import 'package:compreai/models/cart_model.dart';
 import 'package:compreai/models/user_model.dart';
+import 'package:compreai/widgets/cart_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'cart_screen.dart';
 
 class ProductScreen extends StatefulWidget {
   final ProductData product;
@@ -24,6 +27,7 @@ class _ProductScreenState extends State<ProductScreen> {
     return Stack(
       children: <Widget>[
         Scaffold(
+            floatingActionButton: CartButton(),
             key: _scaffoldKey,
             backgroundColor: Colors.white,
             appBar: AppBar(
@@ -31,7 +35,7 @@ class _ProductScreenState extends State<ProductScreen> {
               title: Text(
                 product.title,
                 style: TextStyle(
-                    color: Colors.purple, fontWeight: FontWeight.bold),
+                    color: Colors.deepOrange, fontWeight: FontWeight.bold),
               ),
               centerTitle: true,
             ),
@@ -132,6 +136,10 @@ class _ProductScreenState extends State<ProductScreen> {
                                     cartProduct.categoria = product.category;
                                     CartModel.of(context)
                                         .addCartItem(cartProduct);
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                CartScreen()));
                                   } else {
                                     _scaffoldKey.currentState
                                         .showSnackBar(SnackBar(
@@ -145,7 +153,7 @@ class _ProductScreenState extends State<ProductScreen> {
                           child: Text("Adicionar ao Carrinho",
                               style:
                                   TextStyle(fontSize: 18, color: Colors.white)),
-                          color: primaryColor,
+                          color: Colors.purple,
                         ),
                       ),
                       SizedBox(height: 16),

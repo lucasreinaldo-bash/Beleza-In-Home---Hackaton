@@ -9,7 +9,8 @@ class Produtos extends StatelessWidget {
         backgroundColor: Colors.white,
         title: Text(
           "Produtos",
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.purple),
+          style:
+              TextStyle(fontWeight: FontWeight.bold, color: Colors.deepOrange),
         ),
         centerTitle: true,
       ),

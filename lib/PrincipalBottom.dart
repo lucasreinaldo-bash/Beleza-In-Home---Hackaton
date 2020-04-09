@@ -1,3 +1,4 @@
+import 'package:compreai/routers/cart_screen.dart';
 import 'package:compreai/routers/perfilUsuario.dart';
 import 'package:compreai/routers/produtos.dart';
 import 'package:compreai/widgets/AnimatedBottomBar.dart';
@@ -66,7 +67,7 @@ class _PrincipalState extends State<Principal> {
     List<Widget> telas = [
       Produtos(),
       Produtos(),
-      TelaInicial(),
+      CartScreen(),
       PerfilUsuario(),
       PerfilUsuario(),
     ];

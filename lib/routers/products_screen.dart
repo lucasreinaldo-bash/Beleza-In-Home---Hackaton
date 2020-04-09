@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:compreai/datas/product_data.dart';
 import 'package:compreai/tiles/product_tile.dart';
+import 'package:compreai/widgets/cart_button.dart';
 import 'package:flutter/material.dart';
 
 class Products_Screen extends StatelessWidget {
@@ -13,6 +14,7 @@ class Products_Screen extends StatelessWidget {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
+          floatingActionButton: CartButton(),
           appBar: AppBar(
             backgroundColor: Colors.white,
             title: Text(
@@ -22,7 +24,7 @@ class Products_Screen extends StatelessWidget {
             ),
             centerTitle: true,
             bottom: TabBar(
-              indicatorColor: Colors.purple,
+              indicatorColor: Colors.deepPurple,
               tabs: <Widget>[
                 Tab(
                     child: Text(

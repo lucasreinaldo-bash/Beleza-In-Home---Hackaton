@@ -1,6 +1,7 @@
 import 'package:compreai/routers/produtos.dart';
 import 'package:compreai/tabs/InicioTab.dart';
 import 'package:compreai/widgets/CustomDrawer.dart';
+import 'package:compreai/widgets/cart_button.dart';
 import 'package:flutter/material.dart';
 
 class TelaInicial extends StatefulWidget {
