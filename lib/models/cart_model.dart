@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:compreai/datas/cart_product.dart';
 import 'package:compreai/models/user_model.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 class CartModel extends Model {
@@ -109,5 +110,53 @@ class CartModel extends Model {
 
   void updatePrice() {
     notifyListeners();
+  }
+
+  Future<String> finalizarCompra() async {
+    if (products.length == 0) return null;
+
+    isLoading = true;
+    notifyListeners();
+
+    double productsPrice = getProductPrice();
+    double productsFrete = getFrete();
+    double productsDesconto = getDesconto();
+
+    DocumentReference referenciaOrdem =
+        await Firestore.instance.collection("ordemPedidos").add({
+      "clienteId": user.firebaseUser.uid,
+      "produtos": products.map((catProduct) => catProduct.toMap()).toList(),
+      "precoDoFrete": productsFrete,
+      "precoDosProdutos": productsPrice,
+      "desconto": productsDesconto,
+      "precoTotal": productsPrice - productsDesconto + productsFrete,
+      "status": 1
+    });
+
+    await Firestore.instance
+        .collection("Usuarios")
+        .document(user.firebaseUser.uid)
+        .collection("ordemPedidos")
+        .document(referenciaOrdem.documentID)
+        .setData({"ordemId": referenciaOrdem.documentID});
+
+    QuerySnapshot querySnapshot = await Firestore.instance
+        .collection("Usuarios")
+        .document(user.firebaseUser.uid)
+        .collection("cart")
+        .getDocuments();
+    for (DocumentSnapshot doc in querySnapshot.documents) {
+      doc.reference.delete();
+    }
+
+    products.clear();
+
+    cupomDesconto = null;
+    discountPercentage = 0;
+
+    isLoading = false;
+    notifyListeners();
+
+    return referenciaOrdem.documentID;
   }
 }

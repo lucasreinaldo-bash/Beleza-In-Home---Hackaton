@@ -35,7 +35,7 @@ class _AnimatedBottomBarState extends State<AnimatedBottomBar>
           right: width * 0.04, // 16.0,
         ),
         child: Row(
-          mainAxisSize: MainAxisSize.max,
+          mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: _buildBarItems(context, width),
         ),

@@ -1,5 +1,6 @@
 import 'package:compreai/models/cart_model.dart';
 import 'package:compreai/models/user_model.dart';
+import 'package:compreai/routers/ordemPedidoConfirmado.dart';
 import 'package:compreai/tiles/CartTile.dart';
 import 'package:compreai/widgets/card_desconto.dart';
 import 'package:compreai/widgets/cart_resumo.dart';
@@ -86,7 +87,13 @@ class CartScreen extends StatelessWidget {
                 }).toList(),
               ),
               CardDesconto(),
-              CartResumo(() {}),
+              CartResumo(() async {
+                String ordemId = await model.finalizarCompra();
+                if (ordemId != null) {
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => OrdemPedidoConfirmado(ordemId)));
+                }
+              }),
             ],
           );
         }

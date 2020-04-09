@@ -69,7 +69,10 @@ class CartResumo extends StatelessWidget {
                     ],
                   ),
                   RaisedButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      String orderId = await model.finalizarCompra();
+                      print(orderId);
+                    },
                     child: Text(
                       "Finalizar Pedido",
                       style: TextStyle(color: Colors.white),
