@@ -1,4 +1,5 @@
 import 'package:compreai/models/cart_model.dart';
+import 'package:compreai/routers/ordemPedidoConfirmado.dart';
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 
@@ -70,8 +71,12 @@ class CartResumo extends StatelessWidget {
                   ),
                   RaisedButton(
                     onPressed: () async {
-                      String orderId = await model.finalizarCompra();
-                      print(orderId);
+                      String ordemId = await model.finalizarCompra();
+                      if (ordemId != null) {
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (context) =>
+                                OrdemPedidoConfirmado(ordemId)));
+                      }
                     },
                     child: Text(
                       "Finalizar Pedido",
