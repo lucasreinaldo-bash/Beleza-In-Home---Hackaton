@@ -43,7 +43,7 @@ class _StartPageState extends State<StartPage> {
     double _height = MediaQuery.of(context).size.height;
     double _width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Colors.transparent,
+      backgroundColor: Colors.white,
       extendBody: true,
       body: Stack(
         alignment: Alignment.topCenter,
@@ -74,7 +74,6 @@ class _StartPageState extends State<StartPage> {
                   _currentIndex = index;
                   switch (index) {
                     case 0:
-                      postionLogo = Tween(begin: 0.0, end: 0.1);
                       break;
                     default:
                       postionLogo = Tween(begin: 0.0, end: 0.1);
@@ -94,7 +93,7 @@ class _StartPageState extends State<StartPage> {
                   valueChanged: (index) {
                     setState(() {
                       _animacaoColor = Tween(begin: 4.0, end: 0.0);
-                      _currentIndexColor = index;
+                      _currentIndexColor = 3;
                       _animacaoColor = Tween(begin: 0.0, end: 2.3);
                     });
                   },
@@ -114,7 +113,6 @@ class _StartPageState extends State<StartPage> {
                     ? _width / 2 - (100 / 2)
                     : 15,
                 child: TweenAnimationBuilder(
-                  child: LogoWidget(),
                   duration: Duration(milliseconds: 300),
                   curve: Curves.bounceIn,
                   tween: findAnimation('logo_scale', 0.0, animationlist),

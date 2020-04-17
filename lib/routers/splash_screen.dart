@@ -37,9 +37,9 @@ class _SplashScreenState extends State<SplashScreen> {
             child: Transform.scale(
               scale: 1.2,
               child: Image.asset(
-                'assets/logonova.png',
-                width: 100,
-                height: 100,
+                'assets/belezainhome.png',
+                width: 200,
+                height: 200,
               ),
             ),
           ),

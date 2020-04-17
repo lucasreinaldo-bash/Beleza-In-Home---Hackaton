@@ -1,3 +1,4 @@
+import 'package:compreai/routers/Login.dart';
 import 'package:compreai/utils/animation_item.dart';
 import 'package:compreai/widgets/logo_widget.dart';
 import 'package:flutter/material.dart';
@@ -18,107 +19,78 @@ class _FirstPageState extends State<FirstPage> {
   @override
   void initState() {
     super.initState();
-    delayAnimatiom(
-        AnimationItem(
-          name: 'padding_top_label',
-          tween: Tween<double>(begin: 0.0, end: 1),
-        ),
-        Duration(milliseconds: 800), (animation) {
-      setState(() {
-        animationlist.add(animation);
-      });
-    });
-    delayAnimatiom(
-        AnimationItem(
-          name: 'button_scale',
-          tween: Tween<double>(begin: 0.0, end: 0.9),
-        ),
-        Duration(milliseconds: 1200), (animation) {
-      setState(() {
-        animationlist.add(animation);
-      });
-    });
   }
 
   @override
   Widget build(BuildContext context) {
     double _height = MediaQuery.of(context).size.height;
-    return ListView(
-      children: <Widget>[
-        Container(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              TweenAnimationBuilder(
-                  duration: Duration(milliseconds: 800),
-                  curve: Curves.easeOutCubic,
-                  tween: findAnimation('padding_top_label', 20, animationlist),
-                  builder: (context, value, child) {
-                    return Column(
-                      children: <Widget>[
-                        Padding(
-                          padding: EdgeInsets.only(
-                              left: 30, right: 30, top: _height * 0.12 + value),
-                          child: AnimatedOpacity(
-                              opacity: value == 20 ? 0 : 1,
-                              duration: Duration(milliseconds: 700),
-                              child: Image.asset(
-                                'assets/fruitsvegetablesbasket.png',
-                                width: 200,
-                                height: 200,
-                              )),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 30, vertical: 10),
-                          child: AnimatedOpacity(
-                            opacity: value == 20 ? 0 : 1,
-                            duration: Duration(milliseconds: 800),
-                            child: Text(
-                              'Não precisa sair de casa!',
-                              style: TextStyle(
-                                  fontSize: 28,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white),
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                        ),
-                        TweenAnimationBuilder(
-                            duration: Duration(milliseconds: 1200),
-                            curve: Curves.easeOutCubic,
-                            tween: findAnimation(
-                                'padding_top_label', 20, animationlist),
-                            builder: (context, paddingvalue, child) {
-                              return AnimatedOpacity(
-                                opacity: paddingvalue == 20 ? 0 : 1,
-                                duration: Duration(milliseconds: 1300),
-                                child: Padding(
-                                  padding: EdgeInsets.only(
-                                      left: 30,
-                                      right: 30,
-                                      top: 15 + paddingvalue),
-                                  child: Text.rich(
-                                    TextSpan(
-                                      text: ' Faremos a feira no seu lugar!',
-                                      children: [],
-                                      style: TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.white70),
-                                    ),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ),
-                              );
-                            }),
-                      ],
-                    );
-                  }),
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 60.0),
-                child: Column(
+    return Scaffold(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          TweenAnimationBuilder(
+              duration: Duration(milliseconds: 800),
+              curve: Curves.easeOutCubic,
+              tween: findAnimation('padding_top_label', 20, animationlist),
+              builder: (context, value, child) {
+                return Column(
                   children: <Widget>[
+                    Padding(
+                        padding: EdgeInsets.only(left: 30, right: 30, top: 20),
+                        child: Image.asset(
+                          'assets/belezainhome.png',
+                          width: 200,
+                          height: 200,
+                        )),
+                    Image.asset(
+                      'assets/fundo.png',
+                      width: 250,
+                      height: 250,
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    OutlineButton(
+                      hoverColor: Colors.white,
+                      highlightColor: Colors.white70,
+                      highlightElevation: 10,
+                      child: Text('Quero Comprar'),
+                      onPressed: () {
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => Login()));
+                      },
+                      shape: RoundedRectangleBorder(
+                          borderRadius: new BorderRadius.circular(18.0),
+                          side: BorderSide(
+                              color: Colors
+                                  .red)), // callback when button is clicked
+                      borderSide: BorderSide(
+                        color: Colors.red, //Color of the border
+                        style: BorderStyle.solid, //Style of the border
+                        width: 0.8, //width of the border
+                      ),
+                    ),
+                    OutlineButton(
+                      hoverColor: Colors.white,
+                      highlightColor: Colors.white70,
+                      highlightElevation: 10,
+                      child: Text('Quero Vender  '),
+                      onPressed: () {
+                        widget.pageController.animateToPage(1,
+                            duration: Duration(milliseconds: 800),
+                            curve: Curves.easeInCubic);
+                      },
+                      shape: RoundedRectangleBorder(
+                          borderRadius: new BorderRadius.circular(18.0),
+                          side: BorderSide(
+                              color: Colors
+                                  .red)), // callback when button is clicked
+                      borderSide: BorderSide(
+                        color: Colors.red, //Color of the border
+                        style: BorderStyle.solid, //Style of the border
+                        width: 0.8, //width of the border
+                      ),
+                    ),
                     TweenAnimationBuilder(
                       child: LogoWidget(),
                       duration: Duration(milliseconds: 1000),
@@ -131,7 +103,7 @@ class _FirstPageState extends State<FirstPage> {
                           scale: value,
                           child: Padding(
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 40, vertical: 30),
+                                horizontal: 40, vertical: 10),
                             child: Row(
                               children: <Widget>[
                                 Expanded(
@@ -156,12 +128,12 @@ class _FirstPageState extends State<FirstPage> {
                                           }
                                         });
                                       },
-                                      hoverColor: Colors.white,
+                                      hoverColor: Colors.lightGreen,
                                       hoverElevation: 0,
-                                      highlightColor: Colors.white,
+                                      highlightColor: Colors.lightGreen,
                                       highlightElevation: 0,
                                       elevation: 0,
-                                      color: Colors.white,
+                                      color: Colors.green,
                                       shape: RoundedRectangleBorder(
                                           borderRadius:
                                               BorderRadius.circular(40)),
@@ -172,9 +144,8 @@ class _FirstPageState extends State<FirstPage> {
                                             curve: Curves.easeInCubic);
                                       },
                                       child: Text(
-                                        'CADASTRE-SE',
-                                        style: TextStyle(
-                                            color: widget.buttonColor),
+                                        'Sou uma empresa e quero vender',
+                                        style: TextStyle(color: Colors.white),
                                       ),
                                     ),
                                   ),
@@ -185,28 +156,11 @@ class _FirstPageState extends State<FirstPage> {
                         );
                       },
                     ),
-                    TweenAnimationBuilder(
-                        //child: LogoWidget(),
-                        duration: Duration(milliseconds: 1000),
-                        curve: Curves.elasticOut,
-                        tween:
-                            findAnimation('button_scale', 0.0, animationlist),
-                        builder: (context, value, child) {
-                          return Transform.scale(
-                            scale: value,
-                            child: Text(
-                              'JÁ TENHO UMA CONTA',
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          );
-                        }),
                   ],
-                ),
-              )
-            ],
-          ),
-        )
-      ],
+                );
+              }),
+        ],
+      ),
     );
   }
 }
