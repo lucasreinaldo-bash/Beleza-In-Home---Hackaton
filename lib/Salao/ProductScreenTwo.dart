@@ -10,6 +10,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'cart_modelTwo.dart';
+import 'cart_productTwo.dart';
 import 'cart_screenTwo.dart';
 
 class ProductScreenTwo extends StatefulWidget {
@@ -129,17 +130,18 @@ class _ProductScreenTwoState extends State<ProductScreenTwo> {
                           onPressed: preferencia != null
                               ? () {
                                   if (UserModel.of(context).isLoggedIn()) {
-                                    CartProduct cartProduct = CartProduct();
+                                    CartProductTwo cartProduct =
+                                        CartProductTwo();
                                     cartProduct.variacao = preferencia;
                                     cartProduct.quantidade = 1;
                                     cartProduct.pid = product.id;
                                     cartProduct.categoria = product.category;
-                                    CartModel.of(context)
+                                    CartModelTwo.of(context)
                                         .addCartItem(cartProduct);
                                     Navigator.of(context).push(
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                CartScreen()));
+                                                CartScreenTwo()));
                                   } else {
                                     _scaffoldKey.currentState
                                         .showSnackBar(SnackBar(

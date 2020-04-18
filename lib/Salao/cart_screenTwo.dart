@@ -7,6 +7,7 @@ import 'package:compreai/widgets/cart_resumo.dart';
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 
+import 'CartTileTwo.dart';
 import 'cart_modelTwo.dart';
 
 class CartScreenTwo extends StatelessWidget {
@@ -86,7 +87,7 @@ class CartScreenTwo extends StatelessWidget {
             children: <Widget>[
               Column(
                 children: model.products.map((product) {
-                  return CartTile(product);
+                  return CartTileTwo(product);
                 }).toList(),
               ),
               CardDesconto(),

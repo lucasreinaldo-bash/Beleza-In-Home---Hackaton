@@ -5,13 +5,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:scoped_model/scoped_model.dart';
 
+import 'cart_productTwo.dart';
+
 class CartModelTwo extends Model {
   //Cupom de desconto
   String cupomDesconto;
   int discountPercentage = 0;
 
   UserModel user;
-  List<CartProduct> products = [];
+  List<CartProductTwo> products = [];
 
   bool isLoading = false;
   CartModelTwo(this.user) {
@@ -20,7 +22,7 @@ class CartModelTwo extends Model {
 
   static CartModelTwo of(BuildContext context) =>
       ScopedModel.of<CartModelTwo>(context);
-  void addCartItem(CartProduct cartProduct) {
+  void addCartItem(CartProductTwo cartProduct) {
     products.add(cartProduct);
 
     Firestore.instance
@@ -35,7 +37,7 @@ class CartModelTwo extends Model {
     notifyListeners();
   }
 
-  void removeCartItem(CartProduct cartProduct) {
+  void removeCartItem(CartProductTwo cartProduct) {
     Firestore.instance
         .collection("Usuarios")
         .document(user.firebaseUser.uid)
@@ -48,7 +50,7 @@ class CartModelTwo extends Model {
     notifyListeners();
   }
 
-  void decProduct(CartProduct cartProduct) {
+  void decProduct(CartProductTwo cartProduct) {
     cartProduct.quantidade--;
 
     Firestore.instance
@@ -61,7 +63,7 @@ class CartModelTwo extends Model {
     notifyListeners();
   }
 
-  void incProduct(CartProduct cartProduct) {
+  void incProduct(CartProductTwo cartProduct) {
     cartProduct.quantidade++;
 
     Firestore.instance
@@ -82,7 +84,7 @@ class CartModelTwo extends Model {
         .getDocuments();
 
     products = querySnapshot.documents
-        .map((doc) => CartProduct.fromDocument(doc))
+        .map((doc) => CartProductTwo.fromDocument(doc))
         .toList();
     notifyListeners();
   }
@@ -94,7 +96,7 @@ class CartModelTwo extends Model {
 
   double getProductPrice() {
     double price = 0.0;
-    for (CartProduct c in products) {
+    for (CartProductTwo c in products) {
       if (c.productData != null) price += c.quantidade * c.productData.price;
     }
     return price;
