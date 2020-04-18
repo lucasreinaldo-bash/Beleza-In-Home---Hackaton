@@ -7,7 +7,7 @@ import 'ProductScreenTwo.dart';
 
 class ProductTileTwo extends StatelessWidget {
   final String type;
-  final ProductDataTwo product;
+  final ProductData product;
 
   ProductTileTwo(this.type, this.product);
 
@@ -16,7 +16,7 @@ class ProductTileTwo extends StatelessWidget {
     return InkWell(
       onTap: () {
         Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => ProductScreenTwo(product)));
+            MaterialPageRoute(builder: (context) => ProductScreen(product)));
       },
       child: Card(
         child: type == "grid"

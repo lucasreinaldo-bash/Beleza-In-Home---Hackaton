@@ -27,7 +27,7 @@ class CartScreenTwo extends StatelessWidget {
           Container(
             padding: EdgeInsets.only(right: 8),
             alignment: Alignment.center,
-            child: ScopedModelDescendant<CartModel>(
+            child: ScopedModelDescendant<CartModelTwo>(
               builder: (context, child, model) {
                 int p = model.products.length;
                 return Text(

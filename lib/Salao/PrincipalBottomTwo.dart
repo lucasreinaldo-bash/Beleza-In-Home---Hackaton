@@ -1,3 +1,4 @@
+import 'package:compreai/Salao/cart_screenTwo.dart';
 import 'package:compreai/Salao/produtosTwo.dart';
 import 'package:compreai/routers/cart_screen.dart';
 import 'package:compreai/routers/perfilUsuario.dart';

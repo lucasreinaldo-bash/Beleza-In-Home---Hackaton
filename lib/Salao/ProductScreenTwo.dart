@@ -14,14 +14,14 @@ import 'cart_productTwo.dart';
 import 'cart_screenTwo.dart';
 
 class ProductScreenTwo extends StatefulWidget {
-  final ProductDataTwo product;
+  final ProductData product;
   ProductScreenTwo(this.product);
   @override
   _ProductScreenTwoState createState() => _ProductScreenTwoState(product);
 }
 
 class _ProductScreenTwoState extends State<ProductScreenTwo> {
-  final ProductDataTwo product;
+  final ProductData product;
   String preferencia;
   _ProductScreenTwoState(this.product);
   final _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -130,13 +130,12 @@ class _ProductScreenTwoState extends State<ProductScreenTwo> {
                           onPressed: preferencia != null
                               ? () {
                                   if (UserModel.of(context).isLoggedIn()) {
-                                    CartProductTwo cartProduct =
-                                        CartProductTwo();
+                                    CartProduct cartProduct = CartProduct();
                                     cartProduct.variacao = preferencia;
                                     cartProduct.quantidade = 1;
                                     cartProduct.pid = product.id;
                                     cartProduct.categoria = product.category;
-                                    CartModelTwo.of(context)
+                                    CartModel.of(context)
                                         .addCartItem(cartProduct);
                                     Navigator.of(context).push(
                                         MaterialPageRoute(

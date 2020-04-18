@@ -73,19 +73,19 @@ class Products_ScreenTwo extends StatelessWidget {
                             childAspectRatio: 0.65),
                         itemCount: snapshot.data.documents.length,
                         itemBuilder: (context, index) {
-                          ProductDataTwo data = ProductDataTwo.fromDocument(
+                          ProductData data = ProductData.fromDocument(
                               snapshot.data.documents[index]);
                           data.category = this.snapshot.documentID;
-                          return ProductTileTwo("grid", data);
+                          return ProductTile("grid", data);
                         }),
                     ListView.builder(
                         padding: EdgeInsets.all(4),
                         itemCount: snapshot.data.documents.length,
                         itemBuilder: (context, index) {
-                          ProductDataTwo data = ProductDataTwo.fromDocument(
+                          ProductData data = ProductData.fromDocument(
                               snapshot.data.documents[index]);
                           data.category = this.snapshot.documentID;
-                          return ProductTileTwo("list", data);
+                          return ProductTile("list", data);
                         })
                   ],
                 );

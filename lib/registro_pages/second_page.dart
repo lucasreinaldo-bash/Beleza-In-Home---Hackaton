@@ -33,47 +33,53 @@ class _SecondPageState extends State<SecondPage>
           Padding(
             padding: EdgeInsets.only(top: _height * 0.1),
             child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(
-                    'Qual o seu nome ?',
-                    style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
-                    textAlign: TextAlign.left,
-                  ),
-                  TextFormField(
-                    controller: _nameController,
-                    decoration: InputDecoration(hintText: "Nome Completo"),
-                    keyboardType: TextInputType.text,
-                    validator: (text) {
-                      if (text.isEmpty) return "Campo não pode ficar vazio.";
-                    },
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    'E o seu e-mail ?',
-                    style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
-                    textAlign: TextAlign.left,
-                  ),
-                  TextFormField(
-                    controller: _nameController,
-                    decoration: InputDecoration(hintText: "E-mail"),
-                    keyboardType: TextInputType.text,
-                    validator: (text) {
-                      if (text.isEmpty) return "Campo não pode ficar vazio.";
-                    },
-                  ),
-                ],
+                child: Card(
+              color: Colors.transparent,
+              elevation: 40,
+              child: Padding(
+                padding: EdgeInsets.all(1),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      'Qual o seu nome ?',
+                      style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                      textAlign: TextAlign.left,
+                    ),
+                    TextFormField(
+                      controller: _nameController,
+                      decoration: InputDecoration(hintText: "Nome Completo"),
+                      keyboardType: TextInputType.text,
+                      validator: (text) {
+                        if (text.isEmpty) return "Campo não pode ficar vazio.";
+                      },
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      'E o seu e-mail ?',
+                      style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                      textAlign: TextAlign.left,
+                    ),
+                    TextFormField(
+                      controller: _nameController,
+                      decoration: InputDecoration(hintText: "E-mail"),
+                      keyboardType: TextInputType.text,
+                      validator: (text) {
+                        if (text.isEmpty) return "Campo não pode ficar vazio.";
+                      },
+                    ),
+                  ],
+                ),
               ),
-            ),
+            )),
           )
         ],
       ),
