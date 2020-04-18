@@ -2,6 +2,7 @@ import 'package:compreai/registro_pages/first_page.dart';
 import 'package:compreai/registro_pages/password_page.dart';
 import 'package:compreai/registro_pages/second_page.dart';
 import 'package:compreai/registro_pages/third_page.dart';
+import 'package:compreai/routers/geolocalizacaoUsuario.dart';
 import 'package:compreai/utils/animation_item.dart';
 import 'package:compreai/utils/consts.dart';
 import 'package:compreai/widgets/logo_widget.dart';
@@ -87,6 +88,7 @@ class _StartPageState extends State<StartPage> {
                   buttonColor: listColors[_currentIndexColor].colors[1],
                 ),
                 SecondPage(),
+                GeolocalizacaoUsuario(),
                 PasswordPage(),
                 ThirdPage(
                   initialIndex: _currentIndexColor,

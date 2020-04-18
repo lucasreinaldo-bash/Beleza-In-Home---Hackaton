@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'dart:typed_data';
 import 'package:compreai/PrincipalBottom.dart';
+import 'package:compreai/routers/recepcaoUsuario.dart';
+import 'package:compreai/routers/recepcaoUsuarioLocalizado.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -133,8 +135,8 @@ class _MyMapPageState extends State<MyMapPage> {
                   elevation: 40,
                   child: OutlineButton(
                     onPressed: () {
-                      Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) => Principal()));
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => RecepcaoUsuarioLocalizado()));
                     },
                     color: Colors.white,
                     highlightColor: Colors.white10,

@@ -7,7 +7,9 @@ import 'package:compreai/widgets/cart_resumo.dart';
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 
-class CartScreen extends StatelessWidget {
+import 'cart_modelTwo.dart';
+
+class CartScreenTwo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +38,8 @@ class CartScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: ScopedModelDescendant<CartModel>(builder: (context, child, model) {
+      body:
+          ScopedModelDescendant<CartModelTwo>(builder: (context, child, model) {
         if (model.isLoading && UserModel.of(context).isLoggedIn()) {
           return Center(
             child: CircularProgressIndicator(),
@@ -89,8 +92,6 @@ class CartScreen extends StatelessWidget {
               CardDesconto(),
               CartResumo(() async {
                 String orderId = await model.finalizarCompra();
-
-                
               }),
             ],
           );
