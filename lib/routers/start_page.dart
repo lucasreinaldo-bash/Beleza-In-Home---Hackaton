@@ -1,4 +1,5 @@
 import 'package:compreai/registro_pages/first_page.dart';
+import 'package:compreai/registro_pages/intro_registrar_empresa.dart';
 import 'package:compreai/registro_pages/password_page.dart';
 import 'package:compreai/registro_pages/second_page.dart';
 import 'package:compreai/registro_pages/third_page.dart';
@@ -87,8 +88,8 @@ class _StartPageState extends State<StartPage> {
                   pageController: _pageController,
                   buttonColor: listColors[_currentIndexColor].colors[1],
                 ),
-                SecondPage(),
-                GeolocalizacaoUsuario(),
+                RegistrarEmpresaIntro(),
+                RegistrarEmpresaIntro(),
                 PasswordPage(),
                 ThirdPage(
                   initialIndex: _currentIndexColor,

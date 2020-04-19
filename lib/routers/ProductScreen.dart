@@ -3,6 +3,7 @@ import 'package:compreai/datas/cart_product.dart';
 import 'package:compreai/datas/product_data.dart';
 import 'package:compreai/models/cart_model.dart';
 import 'package:compreai/models/user_model.dart';
+import 'package:compreai/routers/start_page.dart';
 import 'package:compreai/widgets/cart_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -31,11 +32,11 @@ class _ProductScreenState extends State<ProductScreen> {
             key: _scaffoldKey,
             backgroundColor: Colors.white,
             appBar: AppBar(
-              backgroundColor: Colors.white,
+              backgroundColor: Colors.green.shade100,
               title: Text(
                 product.title,
                 style: TextStyle(
-                    color: Colors.deepOrange, fontWeight: FontWeight.bold),
+                    color: Colors.green.shade900, fontWeight: FontWeight.bold),
               ),
               centerTitle: true,
             ),
@@ -112,7 +113,7 @@ class _ProductScreenState extends State<ProductScreen> {
                                           color: s == preferencia
                                               ? Colors.green[600]
                                               : Colors.grey,
-                                          width: s == preferencia ? 4 : 1)),
+                                          width: s == preferencia ? 4 : 2)),
                                   width: 50,
                                   alignment: Alignment.center,
                                   child: Text(s),
@@ -123,37 +124,55 @@ class _ProductScreenState extends State<ProductScreen> {
                       SizedBox(
                         height: 16,
                       ),
-                      SizedBox(
-                        height: 44,
-                        child: RaisedButton(
-                          onPressed: preferencia != null
-                              ? () {
-                                  if (UserModel.of(context).isLoggedIn()) {
-                                    CartProduct cartProduct = CartProduct();
-                                    cartProduct.variacao = preferencia;
-                                    cartProduct.quantidade = 1;
-                                    cartProduct.pid = product.id;
-                                    cartProduct.categoria = product.category;
-                                    CartModel.of(context)
-                                        .addCartItem(cartProduct);
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                CartScreen()));
-                                  } else {
-                                    _scaffoldKey.currentState
-                                        .showSnackBar(SnackBar(
-                                      content: Text("Você não está conectado!"),
-                                      backgroundColor: Colors.blueGrey,
-                                      duration: Duration(seconds: 2),
-                                    ));
-                                  }
+                      SizedBox(height: 16),
+                      OutlineButton(
+                        color: Colors.green,
+                        hoverColor: Colors.white,
+                        highlightColor: Colors.white70,
+                        highlightElevation: 10,
+                        child: Container(
+                          width: 150,
+                          height: 30,
+                          child: Row(
+                            children: <Widget>[
+                              Text(
+                                'Adicionar ao Carrinho',
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                        onPressed: preferencia != null
+                            ? () {
+                                if (UserModel.of(context).isLoggedIn()) {
+                                  CartProduct cartProduct = CartProduct();
+                                  cartProduct.variacao = preferencia;
+                                  cartProduct.quantidade = 1;
+                                  cartProduct.pid = product.id;
+                                  cartProduct.categoria = product.category;
+                                  CartModel.of(context)
+                                      .addCartItem(cartProduct);
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) => CartScreen()));
+                                } else {
+                                  _scaffoldKey.currentState
+                                      .showSnackBar(SnackBar(
+                                    content: Text("Você não está conectado!"),
+                                    backgroundColor: Colors.blueGrey,
+                                    duration: Duration(seconds: 2),
+                                  ));
                                 }
-                              : null,
-                          child: Text("Adicionar ao Carrinho",
-                              style:
-                                  TextStyle(fontSize: 18, color: Colors.white)),
-                          color: Colors.purple,
+                              }
+                            : null,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: new BorderRadius.circular(18.0),
+                            side: BorderSide(
+                                color: Colors
+                                    .white30)), // callback when button is clicked
+                        borderSide: BorderSide(
+                          color: Colors.blueGrey, //Color of the border
+                          style: BorderStyle.solid, //Style of the border
+                          width: 0.8, //width of the border
                         ),
                       ),
                       SizedBox(height: 16),

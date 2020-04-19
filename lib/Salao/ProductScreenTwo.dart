@@ -33,13 +33,13 @@ class _ProductScreenTwoState extends State<ProductScreenTwo> {
         Scaffold(
             floatingActionButton: CartButton(),
             key: _scaffoldKey,
-            backgroundColor: Colors.white,
+            backgroundColor: Colors.blueGrey,
             appBar: AppBar(
-              backgroundColor: Colors.white,
+              backgroundColor: Colors.blueGrey,
               title: Text(
                 product.title,
                 style: TextStyle(
-                    color: Colors.deepOrange, fontWeight: FontWeight.bold),
+                    color: Colors.green.shade300, fontWeight: FontWeight.bold),
               ),
               centerTitle: true,
             ),

@@ -19,8 +19,9 @@ class Products_Screen extends StatelessWidget {
             backgroundColor: Colors.white,
             title: Text(
               snapshot.data["title"],
-              style:
-                  TextStyle(color: Colors.purple, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  color: Colors.lightGreen.shade700,
+                  fontWeight: FontWeight.bold),
             ),
             centerTitle: true,
             bottom: TabBar(

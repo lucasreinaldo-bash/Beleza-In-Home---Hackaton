@@ -37,7 +37,8 @@ class InicioTab extends StatelessWidget {
                     height: 200,
                     alignment: Alignment.center,
                     child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
+                      valueColor:
+                          AlwaysStoppedAnimation<Color>(Colors.green.shade100),
                     ),
                   ));
                 else {

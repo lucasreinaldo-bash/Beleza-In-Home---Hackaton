@@ -69,7 +69,10 @@ class CartResumo extends StatelessWidget {
                       )
                     ],
                   ),
-                  RaisedButton(
+                  OutlineButton(
+                    hoverColor: Colors.white,
+                    highlightColor: Colors.white70,
+                    highlightElevation: 10,
                     onPressed: () async {
                       String ordemId = await model.finalizarCompra();
                       if (ordemId != null) {
@@ -78,12 +81,31 @@ class CartResumo extends StatelessWidget {
                                 OrdemPedidoConfirmado(ordemId)));
                       }
                     },
-                    child: Text(
-                      "Finalizar Pedido",
-                      style: TextStyle(color: Colors.white),
+
+                    child: Container(
+                      width: 110,
+                      height: 30,
+                      child: Row(
+                        children: <Widget>[
+                          Text(
+                            'Finalizar Pedido',
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
                     ),
-                    color: Colors.purple,
-                  )
+
+                    shape: RoundedRectangleBorder(
+                        borderRadius: new BorderRadius.circular(18.0),
+                        side: BorderSide(
+                            color: Colors
+                                .white30)), // callback when button is clicked
+                    borderSide: BorderSide(
+                      color: Colors.blueGrey, //Color of the border
+                      style: BorderStyle.solid, //Style of the border
+                      width: 0.8, //width of the border
+                    ),
+                  ),
                 ],
               );
             },

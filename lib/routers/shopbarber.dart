@@ -1,3 +1,4 @@
+import 'package:compreai/routers/recepcaoUsuarioLocalizado.dart';
 import 'package:flutter/material.dart';
 
 import '../PrincipalBottom.dart';
@@ -134,6 +135,21 @@ class ShopBarber extends StatelessWidget {
                 width: 0.8, //width of the border
               ),
             ),
+            SizedBox(
+              width: 200,
+              child: InkWell(
+                child: IconButton(
+                  icon: Icon(
+                    Icons.keyboard_return,
+                    color: Colors.green.shade600,
+                  ),
+                ),
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => RecepcaoUsuarioLocalizado()));
+                },
+              ),
+            )
           ],
         )
       ],

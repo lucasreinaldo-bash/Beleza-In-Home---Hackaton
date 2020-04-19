@@ -11,7 +11,7 @@ class PhoneVerify extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 Image.asset(
-                  'assets/logonova.png',
+                  'assets/belezainhome.png',
                   width: 350,
                   height: 350,
                 ),

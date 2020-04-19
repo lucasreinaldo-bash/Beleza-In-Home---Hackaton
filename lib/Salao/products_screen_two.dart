@@ -18,33 +18,34 @@ class Products_ScreenTwo extends StatelessWidget {
       child: Scaffold(
           floatingActionButton: CartButton(),
           appBar: AppBar(
-            backgroundColor: Colors.white,
+            backgroundColor: Colors.blueGrey,
             title: Text(
               snapshot.data["title"],
-              style:
-                  TextStyle(color: Colors.purple, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  color: Colors.lightGreen.shade400,
+                  fontWeight: FontWeight.bold),
             ),
             centerTitle: true,
             bottom: TabBar(
-              indicatorColor: Colors.deepPurple,
+              indicatorColor: Colors.lightGreen.shade100,
               tabs: <Widget>[
                 Tab(
                     child: Text(
                       "Vizualizar em grade",
-                      style: TextStyle(color: Colors.purple),
+                      style: TextStyle(color: Colors.lightGreen.shade100),
                     ),
                     icon: Icon(
                       Icons.grid_on,
-                      color: Colors.purple,
+                      color: Colors.lightGreen.shade100,
                     )),
                 Tab(
                     child: Text(
                       "Compra Rápida",
-                      style: TextStyle(color: Colors.purple),
+                      style: TextStyle(color: Colors.lightGreen.shade100),
                     ),
                     icon: Icon(
                       Icons.list,
-                      color: Colors.purple,
+                      color: Colors.lightGreen.shade100,
                     )),
               ],
             ),

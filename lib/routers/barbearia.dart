@@ -1,5 +1,6 @@
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:compreai/Salao/PrincipalBottomTwo.dart';
+import 'package:compreai/routers/recepcaoUsuarioLocalizado.dart';
 import 'package:flutter/material.dart';
 
 import '../PrincipalBottom.dart';
@@ -103,9 +104,8 @@ class Barbearia extends StatelessWidget {
               },
               shape: RoundedRectangleBorder(
                   borderRadius: new BorderRadius.circular(18.0),
-                  side: BorderSide(
-                      color:
-                          Colors.white30)), // callback when button is clicked
+                  side: BorderSide(color: Colors.white30)),
+              // callback when button is clicked
               borderSide: BorderSide(
                 color: Colors.blueGrey, //Color of the border
                 style: BorderStyle.solid, //Style of the border
@@ -135,15 +135,29 @@ class Barbearia extends StatelessWidget {
               },
               shape: RoundedRectangleBorder(
                   borderRadius: new BorderRadius.circular(18.0),
-                  side: BorderSide(
-                      color:
-                          Colors.white30)), // callback when button is clicked
+                  side: BorderSide(color: Colors.white30)),
+              // callback when button is clicked
               borderSide: BorderSide(
                 color: Colors.blueGrey, //Color of the border
                 style: BorderStyle.solid, //Style of the border
                 width: 0.8, //width of the border
               ),
             ),
+            SizedBox(
+              width: 200,
+              child: InkWell(
+                child: IconButton(
+                  icon: Icon(
+                    Icons.keyboard_return,
+                    color: Colors.green.shade600,
+                  ),
+                ),
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => RecepcaoUsuarioLocalizado()));
+                },
+              ),
+            )
           ],
         )
       ],

@@ -78,7 +78,7 @@ class _PrincipalTwoState extends State<PrincipalTwo> {
       bottomNavigationBar: AnimatedBottomBar(
         barItems: widget.barItems,
         animationDuration: const Duration(milliseconds: 500),
-        barStyle: BarStyle(fontSize: width * 0.024, iconSize: width * 0.05),
+        barStyle: BarStyle(fontSize: width * 0.024, iconSize: width * 0.07),
         onBarTap: (index) {
           setState(() {
             selectedBarIndex = index;

@@ -10,7 +10,6 @@ import 'Registrar.dart';
 class Login extends StatelessWidget {
   final _emailController = TextEditingController();
   final _senhaController = TextEditingController();
-
   final _formKey = GlobalKey<FormState>();
   final _scaffoldKey = GlobalKey<ScaffoldState>();
   double _scaleHolder = 0;
@@ -46,7 +45,6 @@ class Login extends StatelessWidget {
                       height: 16,
                     ),
                     Container(
-                    
                       padding: EdgeInsets.fromLTRB(10, 1, 10, 0),
                       decoration: BoxDecoration(
                           border: Border.all(

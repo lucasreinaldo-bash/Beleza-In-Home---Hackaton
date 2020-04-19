@@ -17,7 +17,7 @@ class CartScreen extends StatelessWidget {
         title: Text(
           "Meu Carrinho",
           style: TextStyle(
-              color: Colors.deepOrangeAccent, fontWeight: FontWeight.bold),
+              color: Colors.green.shade300, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
         actions: <Widget>[
@@ -29,7 +29,7 @@ class CartScreen extends StatelessWidget {
                 int p = model.products.length;
                 return Text(
                   "${p ?? 0} ${p == 1 ? "ITEM" : "ITENS"}",
-                  style: TextStyle(color: Colors.deepOrange),
+                  style: TextStyle(color: Colors.green.shade400),
                 );
               },
             ),
@@ -89,8 +89,6 @@ class CartScreen extends StatelessWidget {
               CardDesconto(),
               CartResumo(() async {
                 String orderId = await model.finalizarCompra();
-
-                
               }),
             ],
           );
