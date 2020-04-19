@@ -20,11 +20,9 @@ O Desenvolvimento foi com a framework Flutter, utilizando a linguagem Java. Opta
 obs: A versão iOS provavalmente não funcionará porquê a configuração do Firebase só foi feita na versão Android.
 obs2: Dependendo do dispositivo, poderá apresentar mal exibição do layout . Não fizemos seções de testes envolvendo outros dispositivos.( Build realizada no Samsung Galaxy J5).
 
-Gravei um video utilizando o aplicativo e comentando suas funcionalidades:
+Gravei um video utilizando o aplicativo e comentando suas funcionalidades: https://drive.google.com/file/d/1nM5uqSMHzG3jJW1mmoUZ3LR02wqq9DRb/view?usp=sharing
 
-
-
-<img src="https://uploaddeimagens.com.br/images/002/599/648/full/UseCase_Diagram0.png?1587279151" width="900" height="350"/>
+<img src="https://uploaddeimagens.com.br/images/002/599/648/full/UseCase_Diagram0.png?1587279151" width="900" height="600"/>
 
   
   
