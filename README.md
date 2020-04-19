@@ -2,7 +2,7 @@
 
 Aplicativo em desenvolvimento para servir como um marketplace mobile, onde empresas poderão se cadastrar para comercializar seus produtos e serviços com clientes locais.
 
-- O projeto não está pronto , mas possui implementações validando e funcionando dos seguintes recursos:
+- O projeto está em andamento e já conta com um protótipo funcional que possui implementações validando e funcionando dos seguintes recursos:
   
   -Geolocalização do usuário recuperada ( mas não é feito o tratamento, nem a inteligência para listar apenas as empresas locais, para fins de monstração utilizei um Carroussel e fiz de algumas loja). Está configurada a API de utilização obtida no Google Cloud Platform
   
