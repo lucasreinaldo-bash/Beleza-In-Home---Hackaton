@@ -8,7 +8,24 @@ Aplicativo em desenvolvimento para servir como um marketplace mobile, onde empre
   
   - Google Firebase ( O login é feito através do Firebase Auth, já validado e funcionando . Foi retirado de funcionamento o  formulário de registro do usuário, mas para fins de teste pode usar no e-mail vostorebr@gmail.com e na senha 221295). A longo prazo, cogitamos a possiblidade de migrarmos para um servidor dedicado . O Firebase contém excelentes recursos, mas a nível de Startup sua solução pode encarecer o produto. Todas as interações da loja , a nivel de exemplo, são feitas através da recuperação de informações do Firestore. A atualização ocorre em tempo real devido ao uso de um FutureBuilder . É capaz de alterar o preço do produto mesmo que ele ja tenha sido colocado no carrinho, devido lógica empregada.
   
- - O formulário preenchido pela empresa após a interação com o Button "Quero Vender", também está sendo enviado para o Firebase . Além disso, na opção de compra existe um campo para preenchimento de Cupom de Desconto
+ - O formulário preenchido pela empresa após a interação com o Button "Quero Vender", também está sendo enviado para o Firebase . Além disso, na opção de compra existe um campo para preenchimento de Cupom de Desconto. Esse cupom é recuperado desse documento do Firestore:
+  
+<img src="https://uploaddeimagens.com.br/images/002/599/636/full/1.png?1587277266" width="900" height="350"/>
+
+
+Utilizamos o Diagrama de Casos de Uso abaixo . Ele contem muitas intenções das quais não foram implementadas devido a correria do Hackaton aliada a necessidade da equipe de desenvolvimento se atentar a outros fatores tambem( monetizacao, parte juridica e etc). Acreditamos que podemos concluir o desenvolvimento e coloca-lo em fase beta no período de 30 dias.
+
+O Desenvolvimento foi com a framework Flutter, utilizando a linguagem Java. Optamos por ela em acreditar no seu potêncial de entrega, além grande aumento da produtividade. Produtividade essa proporcionada ao entregar duas saidas do produto: Android e iOS. 
+
+obs: A versão iOS provavalmente não funcionará porquê a configuração do Firebase só foi feita na versão Android.
+obs2: Dependendo do dispositivo, poderá apresentar mal exibição do layout . Não fizemos seções de testes envolvendo outros dispositivos.( Build realizada no Samsung Galaxy J5).
+
+Gravei um video utilizando o aplicativo e comentando suas funcionalidades:
+
+
+
+<img src="https://uploaddeimagens.com.br/images/002/599/648/full/UseCase_Diagram0.png?1587279151" width="900" height="350"/>
+
   
   
   
@@ -28,6 +45,7 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 <img src="https://uploaddeimagens.com.br/images/002/599/618/full/mockup2.png?1587275855" width="400" height="700"/>
+
 
 
 <img src="https://uploaddeimagens.com.br/images/002/599/620/full/Mockup1.png?1587276018" width="400" height="700"/>
